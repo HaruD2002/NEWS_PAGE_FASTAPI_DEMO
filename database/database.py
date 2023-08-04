@@ -6,10 +6,10 @@ import os
 
 load_dotenv()
 
-db_user = os.environ["DB_USER"]
-db_password = os.environ["DB_PASS"]
-db_host = os.environ["DB_HOST"]
-db_name = os.environ["DB_NAME "]
+db_user = os.getenv("DB_USER")
+db_password = os.getenv("DB_PASS")
+db_host = os.getenv("DB_HOST")
+db_name = os.getenv("DB_NAME")
 
 engine = create_engine(f"mysql+pymysql://{db_user}:{db_password}@{db_host}/{db_name}")
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
