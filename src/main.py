@@ -12,8 +12,3 @@ app.include_router(home.route)
 app.include_router(user.route)
 app.include_router(post.route)
 app.include_router(comment.route)
-
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="localhost", port=8080)

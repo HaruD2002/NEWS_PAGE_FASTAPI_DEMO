@@ -1,5 +1,5 @@
 from typing import Optional, Union
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 class Token(BaseModel):
     access_token: str
@@ -9,7 +9,7 @@ class TokenData(BaseModel):
     pass
 
 class UserModel(BaseModel):
-    last_name: str
+    last_name: str = Field(max_length=50, )
     first_name: str
     email: str
     phone_no: str
